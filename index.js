@@ -19,11 +19,6 @@ require("./Word.js");
 var inquirer = require("inquirer");
 
 
-/** Global store the new Word object
- * @type {object}
- */
-var x;
-
 
 /** Counts number of bad guesses allowed
  * @type {number}
@@ -75,6 +70,12 @@ var randomWord = Number(Math.floor(Math.random() * hangmanArray.length));  // to
 var thisWord = hangmanArray[randomWord];
 
 
+/** Global store the new Word object
+ * @type {object}
+ */
+//@ts-ignore
+var x = new Word(thisWord);
+
 
 //  index.js**: The file containing the logic for the course of the game, which depends on `Word.js` and:
 //  Randomly selects a word and uses the `Word` constructor to store it
@@ -114,10 +115,8 @@ const getCharInput = () => {
  * @function game
  */
 const game = () => {
-    //@ts-ignore
-    x = new Word(thisWord);
+
     console.log(`The word is: ${x.currentGuessString()}`);
-    wordFound = false;
     getCharInput();
 }
 

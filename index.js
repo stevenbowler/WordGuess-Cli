@@ -92,7 +92,7 @@ const getCharInput = () => {
         .then(function (inquirerResponse) {
             x.checkGuess(inquirerResponse.letter);
             console.log(`The word is: ${x.currentGuessString()}`);
-            console.log(`badGuesses: ${x.badGuessString} Bad Guesses Used: ${x.badGuessCount} of ${numberOfBadGuessesAllowed}`);
+            console.log(`badGuesses: ${x.badGuessString} Bad Guesses Used: ${x.badGuessCount} of ${numberOfBadGuessesAllowed}\n`);
             // console.log(`condition true?: ${x.currentGuessString().replace(/ /g, "") === thisWord}`);
             if (x.currentGuessString().replace(/ /g, "") === thisWord) wordFound = true;
             if (x.badGuessCount < numberOfBadGuessesAllowed && !wordFound) getCharInput();

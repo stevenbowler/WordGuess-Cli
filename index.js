@@ -1,6 +1,12 @@
 require("./Word.js");
 var inquirer = require("inquirer");
 
+var x;
+var numberOfGuesses = 0;
+var wordFound = false;
+var randomWord;
+var thisWord;
+
 //https://www.hangmanwords.com/words list of best 250 words for hangman from this site
 const hangmanArray = ["abruptly", "absurd", "abyss", "affix", "askew", "avenue", "awkward", "axiom", "azure", "bagpipes",
     "bandwagon", "banjo", "bayou", "beekeeper", "bikini", "blitz", "blizzard", "boggle", "bookworm", "boxcar", "boxful",
@@ -33,21 +39,21 @@ const getCharInput = () => {
             // Here we create a basic text prompt.
             {
                 type: "input",
-                message: "What is your guess? ",
+                message: "Guess the next letter? ",
                 name: "letter"
             }
         ])
         .then(function (inquirerResponse) {
             // console.log("\ninquirerResponse.letter " + inquirerResponse.letter);
             x.checkGuess(inquirerResponse.letter);
-            console.log(`inputString: ${x.currentGuessString()}`);
-            console.log(`badGuesses: ${x.badGuessString} Number of Bad Guesses: ${x.badGuessString.length}`);
+            console.log(`The word is: ${x.currentGuessString()}`);
+            console.log(`badGuesses: ${x.badGuessString} Bad Guesses Used: ${x.badGuessCount} of 11`);
             // console.log(`condition true?: ${x.currentGuessString().replace(/ /g, "") === thisWord}`);
             if (x.currentGuessString().replace(/ /g, "") === thisWord) wordFound = true;
             ++numberOfGuesses;
-            if (numberOfGuesses < 11 && !wordFound) getCharInput();
+            if (x.badGuessCount < 11 && !wordFound) getCharInput();
             else if (wordFound) console.log(`congratulations it was ${thisWord}`);
-            else if (numberOfGuesses >= 11) console.log(`you blew it the word was ${thisWord}`);
+            else if (x.badGuessCount >= 11) console.log(`you blew it the word was ${thisWord}`);
 
         }
         ).catch(function (err) {
@@ -56,19 +62,14 @@ const getCharInput = () => {
         );
 }
 
-var x;
-var numberOfGuesses = 0;
-var wordFound = false;
-var randomWord;
-var thisWord;
-
 
 const game = () => {
 
-    randomWord = Number(Math.floor(Math.random() * 200));  // to chose word from array of 200
+    randomWord = Number(Math.floor(Math.random() * hangmanArray.length));  // to chose word from array of 200
     thisWord = hangmanArray[randomWord];
-    console.log(thisWord);
+    // console.log(thisWord);
     x = new Word(thisWord);
+    console.log(`The word is: ${x.currentGuessString()}`);
     wordFound = false;
     numberOfGuesses = 0;
     getCharInput();

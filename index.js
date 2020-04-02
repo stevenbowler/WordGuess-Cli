@@ -1,4 +1,7 @@
 //@ts-check
+/**
+ * @todo Anywhere //@ts-ignore appears in code is an unresolve typescripting reference, need to learn these formats
+ */
 
 /**
  * @namespace WordGuessCli

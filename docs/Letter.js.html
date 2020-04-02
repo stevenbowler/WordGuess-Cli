@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Word.js</title>
+    <title>JSDoc: Source: Letter.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Word.js</h1>
+    <h1 class="page-title">Source: Letter.js</h1>
 
     
 
@@ -28,56 +28,29 @@
         <article>
             <pre class="prettyprint source linenums"><code>//@ts-check
 
-
 /**
- * @namespace Word
- * @memberof WordGuessCli
+ * @namespace Letter
+ * @memberof Word
  */
-
-
-/** Require the {@link ./Letter.js} object definition
- * @type {module}
- */
-//@ts-ignore
-require('./Letter.js');
 
 /**
  * @type {module}
  */
 //@ts-ignore
-Word = function (inputString) {
-    this.wordArray = [];
-    this.badGuessString = "";
-    this.badGuessCount = 0;
-    for (var i = 0; i &lt; inputString.length; i++) {
-        //@ts-ignore
-        this.wordArray[i] = new Letter(inputString.slice(i, i + 1));
+Letter = function (letter) {
+    this.letter = letter;
+    this.guess = false;
+    this.isTheLetter = () => {
+        if (this.guess) return this.letter;
+        else return "_";
     }
-    this.currentGuessString = function () {
-        this.wordGuessString = "";
-        for (var i = 0; i &lt; inputString.length; i++) {
-            this.wordGuessString = this.wordGuessString + this.wordArray[i].isTheLetter() + " ";
-        }
-        return this.wordGuessString;
-    }
-    this.checkGuess = function (guess) {
-        var inThisWord = false;                     //assume this letter/guess in not in thisWord 
-        var previousGuess;
-        for (var i = 0; i &lt; inputString.length; i++) {
-            previousGuess = this.wordArray[i].guess;
-            this.wordArray[i].testGuess(guess);
-            if (this.wordArray[i].guess != previousGuess) inThisWord = true; // if state changes then guess is inThisWord
-        }
-        if (!inThisWord) {
-            this.badGuessString = this.badGuessString + guess + " ";
-            ++this.badGuessCount;
-        }
+    this.testGuess = (guess) => {
+        if (guess === this.letter) this.guess = true;
     }
 }
 
 //@ts-ignore
-module.export = { Word };
-</code></pre>
+module.export = { Letter };</code></pre>
         </article>
     </section>
 

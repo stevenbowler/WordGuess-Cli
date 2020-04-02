@@ -1,6 +1,11 @@
 //@ts-check
 
 /**
+ * @namespace Letter
+ * @memberof Word
+ */
+
+/**
  * @type {module}
  */
 //@ts-ignore

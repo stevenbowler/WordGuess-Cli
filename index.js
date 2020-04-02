@@ -1,5 +1,8 @@
 //@ts-check
 
+/**
+ * @namespace WordGuessCli
+ */
 
 /** Require the {@link ./Word.js} object definition
  * @type {module}

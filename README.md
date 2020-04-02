@@ -10,4 +10,4 @@ First, watch this video: _*[WordGuess-Cli](https://drive.google.com/file/d/10E7W
 
 
 ### Program Documentation
-The code is fully documented in JSdocs and can be accessed [here](https://stevenbowler.github.io/WordGuess-Cli/docs/index.js.html), and all varibles and function references can be accessed [here](https://stevenbowler.github.io/WordGuess-Cli/docs/globals.js.html).
+The code is fully documented in JSdocs and can be accessed [here](https://stevenbowler.github.io/WordGuess-Cli/docs/index.js.html), and all varibles and function references can be accessed [here](https://stevenbowler.github.io/WordGuess-Cli/docs/global.html).

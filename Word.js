@@ -1,5 +1,12 @@
 //@ts-check
 
+
+/**
+ * @namespace Word
+ * @memberof WordGuessCli
+ */
+
+
 /** Require the {@link ./Letter.js} object definition
  * @type {module}
  */

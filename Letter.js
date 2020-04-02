@@ -1,3 +1,9 @@
+//@ts-check
+
+/**
+ * @type {module}
+ */
+//@ts-ignore
 Letter = function (letter) {
     this.letter = letter;
     this.guess = false;
@@ -10,4 +16,5 @@ Letter = function (letter) {
     }
 }
 
+//@ts-ignore
 module.export = { Letter };

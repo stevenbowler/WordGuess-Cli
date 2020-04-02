@@ -5,6 +5,7 @@
 
 /**
  * @namespace WordGuessCli
+ * @module WordGuessCli
  */
 
 /** Require the {@link ./Word.js} object definition
@@ -26,7 +27,7 @@ var inquirer = require("inquirer");
 const numberOfBadGuessesAllowed = 11;
 
 
-/** if {@link currentGuessString} = {@link thisWord} set to true to end the game
+/** if {@link ./Word.js/currentGuessString} = {@link thisWord} set to true to end the game
  * @type {boolean}
  */
 var wordFound = false;

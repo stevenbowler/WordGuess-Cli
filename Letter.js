@@ -3,12 +3,15 @@
 /**
  * @namespace Letter
  * @memberof Word
+ * 
+ * @module Letter
+ * @see Word
  */
 
 /**
  * @type {module}
  */
-//@ts-ignore
+// @ts-ignore
 Letter = function (letter) {
     this.letter = letter;
     this.guess = false;
@@ -21,5 +24,6 @@ Letter = function (letter) {
     }
 }
 
+/** */
 //@ts-ignore
 module.export = { Letter };

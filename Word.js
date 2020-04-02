@@ -4,6 +4,9 @@
 /**
  * @namespace Word
  * @memberof WordGuessCli
+ * 
+ * @module Word
+ * @see WordGuessCli
  */
 
 
@@ -47,5 +50,6 @@ Word = function (inputString) {
     }
 }
 
+/** */
 //@ts-ignore
 module.export = { Word };

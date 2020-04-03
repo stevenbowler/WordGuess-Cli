@@ -1,6 +1,7 @@
 //@ts-check
 /**
  * @todo Anywhere //@ts-ignore appears in code is an unresolve typescripting reference, need to learn these formats
+ *          resolved: apr. 3, 2020.  resolved all module/constructor references to eliminate all //@ts-ignore occurences.
  */
 
 /**
@@ -11,7 +12,7 @@
 /** Require the {@link ./Word.js} object definition
  * @type {module}
  */
-require("./Word.js");
+var Word = require("./Word.js");
 
 
 /** Require the {@link https://www.npmjs.com/package/inquirer} package
@@ -74,7 +75,6 @@ var thisWord = hangmanArray[randomWord];
 /** Global store the new Word object
  * @type {object}
  */
-//@ts-ignore
 var x = new Word(thisWord);
 
 

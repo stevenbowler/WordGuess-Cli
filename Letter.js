@@ -5,14 +5,14 @@
  * @memberof Word
  * 
  * @module Letter
- * @see Word
+ * @see module:Word
  */
 
 /**
- * @type {module}
+ * @function Letter
+ * @param {string} letter
  */
-// @ts-ignore
-Letter = function (letter) {
+function Letter(letter) {
     this.letter = letter;
     this.guess = false;
     this.isTheLetter = () => {
@@ -24,6 +24,4 @@ Letter = function (letter) {
     }
 }
 
-/** */
-//@ts-ignore
-module.export = { Letter };
+module.exports = Letter;

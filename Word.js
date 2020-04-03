@@ -6,26 +6,24 @@
  * @memberof WordGuessCli
  * 
  * @module Word
- * @see WordGuessCli
+ * @see module:WordGuessCli
  */
 
 
-/** Require the {@link ./Letter.js} object definition
+/** Require the {@link ./Letter.js} constructor
  * @type {module}
  */
-//@ts-ignore
-require('./Letter.js');
+var Letter = require('./Letter.js');
 
-/**
- * @type {module}
+/** Constructor for the randomly selected word
+ * @function Word
+ * @param {string} inputString
  */
-//@ts-ignore
-Word = function (inputString) {
+function Word(inputString) {
     this.wordArray = [];
     this.badGuessString = "";
     this.badGuessCount = 0;
     for (var i = 0; i < inputString.length; i++) {
-        //@ts-ignore
         this.wordArray[i] = new Letter(inputString.slice(i, i + 1));
     }
     this.currentGuessString = function () {
@@ -50,6 +48,4 @@ Word = function (inputString) {
     }
 }
 
-/** */
-//@ts-ignore
-module.export = { Word };
+module.exports = Word;

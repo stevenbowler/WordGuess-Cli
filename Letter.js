@@ -15,7 +15,7 @@
 
 /**
  * @constructor
- * @param {string} letter
+ * @param {string} letter this is the letter from {@link thisWord}
  */
 function Letter(letter) {
     /**
@@ -39,7 +39,7 @@ function Letter(letter) {
      *   set boolean this.guess to true for this.letter
      * 
      * @function testGuess
-     * @param {string} guess
+     * @param {string} guess Is the guess from the user cli
      *
      */
     this.testGuess = (guess) => {

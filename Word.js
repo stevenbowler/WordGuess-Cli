@@ -17,7 +17,7 @@ var Letter = require('./Letter.js');
 
 /** Constructor for the randomly selected word
  * @class
- * @param {string} inputString
+ * @param {string} inputString this is the full string based on {@link randomWord}
  */
 function Word(inputString) {
     /**
@@ -44,7 +44,7 @@ function Word(inputString) {
     /**
      * Runs method {@link Letter.testGuess} set boolean true if letter matches string, else increment badGuessCount
      * @function checkGuess
-     * @param {string} guess
+     * @param {string} guess This is the guess letter from each iteration of the program
      */
     this.checkGuess = function (guess) {
         var inThisWord = false;                     //assume this letter/guess in not in thisWord 

@@ -75,4 +75,4 @@ congratulations it was glyph
 
 
 ### Program Documentation
-The code is fully documented in JSdocs global scope can be accessed [here](https://stevenbowler.github.io/WordGuess-Cli/docs/global.html), and module references for Letter, Word and WordGuess-Cli can be accessed [here](https://stevenbowler.github.io/WordGuess-Cli/docs/index.html).
+Main module and class references for Letter, Word and WordGuess-Cli can be accessed [here](https://stevenbowler.github.io/WordGuess-Cli/docs/index.html).  Global scope variables can be accessed [here](https://stevenbowler.github.io/WordGuess-Cli/docs/global.html), 

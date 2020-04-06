@@ -16,23 +16,36 @@
 var Letter = require('./Letter.js');
 
 /** Constructor for the randomly selected word
- * @function Word
+ * @class
  * @param {string} inputString
  */
 function Word(inputString) {
+    /**
+     * @lends Word.prototype
+     */
     this.wordArray = [];
     this.badGuessString = "";
     this.badGuessCount = 0;
     for (var i = 0; i < inputString.length; i++) {
         this.wordArray[i] = new Letter(inputString.slice(i, i + 1));
     }
+    /**
+     * Return wordGuessString with 
+     * @function currentGuessString
+     * @returns {string}
+     */
     this.currentGuessString = function () {
-        this.wordGuessString = "";
+        var wordGuessString = "";
         for (var i = 0; i < inputString.length; i++) {
-            this.wordGuessString = this.wordGuessString + this.wordArray[i].isTheLetter() + " ";
+            wordGuessString = wordGuessString + this.wordArray[i].isTheLetter() + " ";
         }
-        return this.wordGuessString;
+        return wordGuessString;
     }
+    /**
+     * Runs method {@link Letter.testGuess} set boolean true if letter matches string, else increment badGuessCount
+     * @function checkGuess
+     * @param {string} guess
+     */
     this.checkGuess = function (guess) {
         var inThisWord = false;                     //assume this letter/guess in not in thisWord 
         var previousGuess;
